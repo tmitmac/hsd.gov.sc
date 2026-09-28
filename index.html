@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hydrographic Survey Department | Square Country Government</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #edf3f5;
+        color: #1d3038;
+        font-size: 14px;
+    }
+
+    a {
+        color: #075d78;
+    }
+
+    /* =========================
+       GOVERNMENT BAR
+       ========================= */
+
+    .govbar {
+        background: #092f3d;
+        color: white;
+        font-size: 12px;
+    }
+
+    .govbar-inner {
+        max-width: 1200px;
+        margin: auto;
+        padding: 7px 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    header {
+        background: white;
+        border-bottom: 1px solid #b8c7cc;
+    }
+
+    .header-inner {
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .department-mark {
+        width: 70px;
+        height: 70px;
+        background: #075d78;
+        border: 4px solid #b69a58;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .department-small {
+        font-size: 12px;
+        color: #66777d;
+        text-transform: uppercase;
+        letter-spacing: .6px;
+        margin-bottom: 4px;
+    }
+
+    h1 {
+        margin: 0;
+        color: #092f3d;
+        font-size: 30px;
+    }
+
+    .tagline {
+        color: #607179;
+        margin-top: 5px;
+    }
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
+    nav {
+        background: #075d78;
+    }
+
+    .nav-inner {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 14px 19px;
+        border-right: 1px solid rgba(255,255,255,.18);
+        display: block;
+        font-size: 13px;
+    }
+
+    nav a:hover,
+    nav a.active {
+        background: #063f52;
+    }
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .hero {
+        background:
+            linear-gradient(rgba(7,65,83,.92), rgba(7,65,83,.92)),
+            repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 29px,
+                rgba(255,255,255,.08) 30px
+            );
+
+        color: white;
+        border-bottom: 6px solid #b69a58;
+    }
+
+    .hero-inner {
+        max-width: 1200px;
+        margin: auto;
+        padding: 60px 20px;
+    }
+
+    .hero-label {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #cddfe4;
+        margin-bottom: 15px;
+    }
+
+    .hero h2 {
+        font-size: 43px;
+        margin: 0 0 15px;
+        max-width: 800px;
+    }
+
+    .hero p {
+        max-width: 760px;
+        font-size: 17px;
+        line-height: 1.6;
+        color: #e2edf0;
+        margin-bottom: 25px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .hero-button {
+        display: inline-block;
+        padding: 12px 20px;
+        background: white;
+        color: #075d78;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .hero-button.secondary {
+        background: transparent;
+        color: white;
+        border: 1px solid white;
+    }
+
+    /* =========================
+       MAIN
+       ========================= */
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 24px 20px 60px;
+    }
+
+    .breadcrumbs {
+        font-size: 12px;
+        color: #68777c;
+        margin-bottom: 20px;
+    }
+
+    /* =========================
+       SEARCH
+       ========================= */
+
+    .chart-search {
+        background: white;
+        border: 1px solid #c3d0d4;
+        padding: 24px;
+        margin-bottom: 25px;
+    }
+
+    .chart-search h2 {
+        margin: 0 0 7px;
+        color: #092f3d;
+        font-size: 22px;
+    }
+
+    .chart-search p {
+        margin: 0 0 18px;
+        color: #586970;
+    }
+
+    .search-row {
+        display: flex;
+        gap: 8px;
+    }
+
+    .search-row input {
+        flex: 1;
+        padding: 13px;
+        border: 1px solid #9eafb5;
+        font-size: 14px;
+    }
+
+    .search-row button {
+        border: none;
+        background: #b69a58;
+        color: white;
+        font-weight: bold;
+        padding: 0 25px;
+        cursor: pointer;
+    }
+
+    .search-row button:hover {
+        background: #967d45;
+    }
+
+    /* =========================
+       ALERT
+       ========================= */
+
+    .marine-alert {
+        background: #f8f1dc;
+        border-left: 6px solid #b69a58;
+        padding: 17px 20px;
+        margin-bottom: 25px;
+    }
+
+    .marine-alert strong {
+        color: #604d19;
+    }
+
+    /* =========================
+       GRID
+       ========================= */
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 22px;
+    }
+
+    .panel {
+        background: white;
+        border: 1px solid #c3d0d4;
+        margin-bottom: 22px;
+    }
+
+    .panel-title {
+        background: #092f3d;
+        color: white;
+        padding: 12px 16px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .panel-content {
+        padding: 18px;
+    }
+
+    /* =========================
+       PRODUCTS
+       ========================= */
+
+    .products {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .product {
+        background: #f3f7f8;
+        border: 1px solid #ccd8dc;
+        padding: 17px;
+    }
+
+    .product:hover {
+        border-color: #075d78;
+        background: #eaf2f4;
+    }
+
+    .product-icon {
+        font-size: 27px;
+        color: #075d78;
+        margin-bottom: 9px;
+    }
+
+    .product h3 {
+        margin: 0 0 7px;
+        font-size: 16px;
+    }
+
+    .product h3 a {
+        color: #075d78;
+    }
+
+    .product p {
+        margin: 0;
+        line-height: 1.45;
+        color: #596a71;
+    }
+
+    /* =========================
+       MAP
+       ========================= */
+
+    .map {
+        height: 270px;
+        background-color: #d9e8e9;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #9fb6bb;
+    }
+
+    .map::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background:
+            repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 31px,
+                rgba(22,100,116,.15) 32px
+            ),
+            repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 31px,
+                rgba(22,100,116,.15) 32px
+            );
+    }
+
+    .contour {
+        position: absolute;
+        border: 2px solid rgba(7,93,120,.35);
+        border-radius: 50%;
+    }
+
+    .c1 {
+        width: 430px;
+        height: 210px;
+        left: 30px;
+        top: 30px;
+    }
+
+    .c2 {
+        width: 330px;
+        height: 160px;
+        left: 80px;
+        top: 55px;
+    }
+
+    .c3 {
+        width: 220px;
+        height: 100px;
+        left: 135px;
+        top: 85px;
+    }
+
+    .map-label {
+        position: absolute;
+        right: 25px;
+        top: 25px;
+        background: rgba(255,255,255,.92);
+        padding: 12px;
+        border: 1px solid #9fb6bb;
+        font-size: 12px;
+    }
+
+    /* =========================
+       TABLE
+       ========================= */
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th {
+        background: #e4ecee;
+        text-align: left;
+        padding: 10px;
+        border-bottom: 1px solid #c1ced2;
+        color: #092f3d;
+        font-size: 12px;
+    }
+
+    td {
+        padding: 10px;
+        border-bottom: 1px solid #d8e0e2;
+        font-size: 13px;
+    }
+
+    /* =========================
+       LINKS
+       ========================= */
+
+    .link-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .link-list li {
+        border-bottom: 1px solid #d8e0e2;
+    }
+
+    .link-list li:last-child {
+        border-bottom: none;
+    }
+
+    .link-list a {
+        display: block;
+        padding: 12px 4px;
+        text-decoration: none;
+    }
+
+    .link-list a:hover {
+        text-decoration: underline;
+    }
+
+    /* =========================
+       STATS
+       ========================= */
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .stat {
+        background: #edf3f4;
+        border: 1px solid #cbd7da;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 23px;
+        font-weight: bold;
+        color: #075d78;
+    }
+
+    .stat-label {
+        font-size: 11px;
+        color: #607179;
+        margin-top: 3px;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+        background: #092f3d;
+        color: #cbd9dd;
+    }
+
+    .footer-inner {
+        max-width: 1200px;
+        margin: auto;
+        padding: 35px 20px;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 35px;
+    }
+
+    footer h3 {
+        color: white;
+        margin-top: 0;
+    }
+
+    footer a {
+        color: #cbd9dd;
+        display: block;
+        margin: 7px 0;
+    }
+
+    .copyright {
+        border-top: 1px solid #34515b;
+        margin-top: 25px;
+        padding-top: 15px;
+        font-size: 11px;
+        color: #9fb2b8;
+        line-height: 1.6;
+    }
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media(max-width: 750px) {
+
+        .govbar-inner {
+            display: block;
+        }
+
+        .govbar-inner div:last-child {
+            margin-top: 5px;
+        }
+
+        h1 {
+            font-size: 22px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+        }
+
+        .content-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .products {
+            grid-template-columns: 1fr;
+        }
+
+        .search-row {
+            display: block;
+        }
+
+        .search-row button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 8px;
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr;
+        }
+
+        nav a {
+            flex: 1 1 50%;
+            text-align: center;
+        }
+    }
+</style>
+</head>
+
+
+<body>
+
+
+<!-- GOVERNMENT BAR -->
+
+<div class="govbar">
+
+    <div class="govbar-inner">
+
+        <div>
+            <strong>SQUARE COUNTRY GOVERNMENT</strong>
+        </div>
+
+        <div>
+            Government information &nbsp; | &nbsp;
+            Accessibility &nbsp; | &nbsp;
+            Contact
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="header-inner">
+
+        <div class="department-mark">
+            HS
+        </div>
+
+        <div>
+
+            <div class="department-small">
+                Square Country Government
+            </div>
+
+            <h1>Hydrographic Survey Department</h1>
+
+            <div class="tagline">
+                Mapping the waters of Square Country
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="nav-inner">
+
+        <a href="#" class="active">Home</a>
+
+        <a href="#">Nautical Charts</a>
+
+        <a href="#">Marine Data</a>
+
+        <a href="#">Notices to Mariners</a>
+
+        <a href="#">Survey Operations</a>
+
+        <a href="#">Publications</a>
+
+        <a href="#">About the Department</a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <div class="hero-label">
+            National Hydrographic Authority
+        </div>
+
+        <h2>
+            Charting the waters of Square Country.
+        </h2>
+
+        <p>
+            The Hydrographic Survey Department provides authoritative
+            hydrographic information, nautical charts and marine data
+            supporting safe navigation, maritime commerce, defence,
+            environmental management and scientific research.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#" class="hero-button">
+                Browse nautical charts
+            </a>
+
+            <a href="#" class="hero-button secondary">
+                Notices to Mariners
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MAIN -->
+
+<div class="container">
+
+
+    <div class="breadcrumbs">
+        You are here: <strong>Home</strong>
+    </div>
+
+
+    <!-- CHART SEARCH -->
+
+    <section class="chart-search">
+
+        <h2>Search marine information</h2>
+
+        <p>
+            Search for nautical charts, survey products, marine
+            publications and hydrographic information.
+        </p>
+
+        <div class="search-row">
+
+            <input
+                type="text"
+                placeholder="Search by chart number, place, publication or keyword..."
+            >
+
+            <button>
+                SEARCH
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- MARINE ALERT -->
+
+    <div class="marine-alert">
+
+        <strong>NOTICE TO MARINERS — 28 SEPTEMBER 2026</strong>
+
+        <br>
+
+        Temporary survey operations are being conducted in the
+        approaches to Square City Harbour. Mariners should maintain
+        a safe distance from survey vessels displaying appropriate
+        signals.
+
+        <br><br>
+
+        <a href="#">Read current Notices to Mariners →</a>
+
+    </div>
+
+
+    <!-- CONTENT -->
+
+    <div class="content-grid">
+
+
+        <!-- LEFT COLUMN -->
+
+        <div>
+
+
+            <!-- PRODUCTS -->
+
+            <section class="panel">
+
+                <div class="panel-title">
+                    Hydrographic products and services
+                </div>
+
+                <div class="panel-content">
+
+                    <div class="products">
+
+
+                        <div class="product">
+
+                            <div class="product-icon">
+                                ⌁
+                            </div>
+
+                            <h3>
+                                <a href="#">
+                                    Nautical charts
+                                </a>
+                            </h3>
+
+                            <p>
+                                Official charts covering the coastal
+                                waters, harbours and approaches of
+                                Square Country.
+                            </p>
+
+                        </div>
+
+
+                        <div class="product">
+
+                            <div class="product-icon">
+                                ◌
+                            </div>
+
+                            <h3>
+                                <a href="#">
+                                    Electronic navigation data
+                                </a>
+                            </h3>
+
+                            <p>
+                                Digital hydrographic products for
+                                electronic navigation systems.
+                            </p>
+
+                        </div>
+
+
+                        <div class="product">
+
+                            <div class="product-icon">
+                                ≋
+                            </div>
+
+                            <h3>
+                                <a href="#">
+                                    Bathymetric data
+                                </a>
+                            </h3>
+
+                            <p>
+                                Depth measurements and seabed data
+                                collected through hydrographic surveys.
+                            </p>
+
+                        </div>
+
+
+                        <div class="product">
+
+                            <div class="product-icon">
+                                ⚓
+                            </div>
+
+                            <h3>
+                                <a href="#">
+                                    Notices to Mariners
+                                </a>
+                            </h3>
+
+                            <p>
+                                Temporary and permanent information
+                                affecting navigation and marine charts.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- MAP -->
+
+            <section class="panel">
+
+                <div class="panel-title">
+                    National hydrographic coverage
+                </div>
+
+                <div class="panel-content">
+
+                    <div class="map">
+
+                        <div class="contour c1"></div>
+                        <div class="contour c2"></div>
+                        <div class="contour c3"></div>
+
+                        <div class="map-label">
+                            <strong>HYDROGRAPHIC DATA</strong><br>
+                            Square Country coastal waters
+                        </div>
+
+                    </div>
+
+                    <p style="font-size:12px;color:#607179;">
+                        Interactive chart coverage map coming soon.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- SURVEY OPERATIONS -->
+
+            <section class="panel">
+
+                <div class="panel-title">
+                    Current survey operations
+                </div>
+
+                <div class="panel-content">
+
+                    <table>
+
+                        <tr>
+                            <th>Area</th>
+                            <th>Operation</th>
+                            <th>Status</th>
+                        </tr>
+
+                        <tr>
+                            <td>Square City Harbour</td>
+                            <td>Port approach survey</td>
+                            <td>In progress</td>
+                        </tr>
+
+                        <tr>
+                            <td>Eastern Boundaries</td>
+                            <td>Seabed mapping</td>
+                            <td>Scheduled</td>
+                        </tr>
+
+                        <tr>
+                            <td>Queenstown Coast</td>
+                            <td>Coastal re-survey</td>
+                            <td>Completed</td>
+                        </tr>
+
+                        <tr>
+                            <td>Southern Regions</td>
+                            <td>Deep-water survey</td>
+                            <td>Scheduled</td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+        <!-- RIGHT COLUMN -->
+
+        <aside>
+
+
+            <!-- QUICK LINKS -->
+
+            <section class="panel">
+
+                <div class="panel-title">
+                    Quick links
+                </div>
+
+                <div class="panel-content">
+
+                    <ul class="link-list">
+
+                        <li>
+                            <a href="#">
+                                Chart catalogue
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Chart index
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Notices to Mariners
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Survey requests
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Marine publications
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Data downloads
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+            <!-- STATISTICS -->
+
+            <section class="panel">
+
+                <div class="panel-title">
+                    Hydrographic coverage
+                </div>
+
+                <div class="panel-content">
+
+                    <div class="stats">
+
+                        <div class="stat">
+                            <div class="stat-number">418</div>
+                            <div class="stat-label">
+                                nautical charts
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-number">26</div>
+                            <div class="stat-label">
+                                survey districts
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-number">8,420</div>
+                            <div class="stat-label">
+                                km surveyed
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- LATEST -->
+
+            <section class="panel">
+
+                <div class="panel-title">
+                    Latest publications
+                </div>
+
+                <div class="panel-content">
+
+                    <p>
+
+                        <strong>
+                            24 September 2026
+                        </strong>
+
+                        <br>
+
+                        Annual Hydrographic Survey Programme
+                        2026–27
+
+                    </p>
+
+                    <hr>
+
+                    <p>
+
+                        <strong>
+                            12 September 2026
+                        </strong>
+
+                        <br>
+
+                        Square City Harbour chart update
+
+                    </p>
+
+                    <hr>
+
+                    <p>
+
+                        <strong>
+                            1 September 2026
+                        </strong>
+
+                        <br>
+
+                        Mariners' Guide to Square Country Waters
+
+                    </p>
+
+                    <a href="#">
+                        View all publications →
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONTACT -->
+
+            <section class="panel">
+
+                <div class="panel-title">
+                    Contact
+                </div>
+
+                <div class="panel-content">
+
+                    <strong>
+                        Hydrographic Survey Department
+                    </strong>
+
+                    <p>
+                        Marine Survey Centre<br>
+                        Square City<br>
+                        Square Country
+                    </p>
+
+                    <p>
+                        Telephone:<br>
+                        +64 4 555 0187
+                    </p>
+
+                    <p>
+                        Email:<br>
+                        hydrography@hsd.gov.sc
+                    </p>
+
+                </div>
+
+            </section>
+
+
+        </aside>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <h3>
+                    Hydrographic Survey Department
+                </h3>
+
+                <p>
+                    Square Country Government
+                </p>
+
+                <p>
+                    Official hydrographic information for the
+                    waters of Square Country.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Information
+                </h3>
+
+                <a href="#">About the Department</a>
+                <a href="#">Contact</a>
+                <a href="#">Publications</a>
+                <a href="#">Careers</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Website
+                </h3>
+
+                <a href="#">Privacy</a>
+                <a href="#">Accessibility</a>
+                <a href="#">Copyright</a>
+                <a href="#">Site map</a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 Hydrographic Survey Department,
+            Square Country Government.
+
+            <br><br>
+
+            This website is a fictional representation of a Square
+            Country Government institution created for entertainment
+            and world-building purposes. Square Country is fictional
+            and is not a real government, country, institution or
+            organisation.
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
